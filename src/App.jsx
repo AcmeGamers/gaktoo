@@ -5,7 +5,7 @@ import Course from "./pages/Course";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Error404 from "./pages/404";
-
+import Roadmap from "./pages/Roadmap/Roadmap";
 import {
   isWallectConnected,
   checkIfTransactionExist,
@@ -27,9 +27,10 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login accountInfo={connectedAccount}/>}>
+          <Route path="/" element={<Login accountInfo={connectedAccount} />}>
             <Route path="/course" index element={<Course />} />
-            <Route path="/home"  element={<Navigate to="/home" />}/>
+            <Route path="/roadmap" index element={<Roadmap />} />
+            <Route path="/home" element={<Navigate to="/home" />} />
             <Route path="*" element={<Error404 />} />
           </Route>
         </Routes>
