@@ -4,9 +4,24 @@ import "./App.css";
 import Course from "./pages/Course";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Error404 from "./pages/Error404";
+import Error404 from "./pages/404";
+
+import {
+  isWallectConnected,
+  checkIfTransactionExist,
+  connectWallet,
+} from "./shared/transaction";
+import { useGlobalState } from "./store";
+
 export default function App() {
-  const [count, setCount] = useState(0);
+  // States
+  const [connectedAccount] = useGlobalState("connectedAccount");
+
+  // Readers
+  useEffect(() => {
+    isWallectConnected();
+    checkIfTransactionExist();
+  }, []);
 
   return (
     <div>

@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
+const [errorMessage, setErrorMessage] = useState("");
+const [defaultAccount, setDefaultAccount] = useState("");
+
+const connectWallet = () => {
+    if (window.etherium){
+        window.etherium.request({
+            method: "eth_requestAccounts",
+        }).then(result=> {
+            accountChangeHandler(result[0]);
+        }
+          )
+        // metamask popup
+        // added utils and store in the source
+    }else{
+        setDefaultAccount("Please install metamask");
+    }
+};
+
+const accountChangeHandler = (newAccounts) => {
+    setDefaultAccount(newAccounts);
 }
 
-export default Login
+  return (
+    <div>
+      <h2>Login to Gaktoo</h2>
+      <p>or connect wallet to start your learning journey</p>
+      <button onClick={connectWallet}>Connect</button>
+      <h3>Address: {defaultAccount} </h3>
+      {errorMessage}
+    </div>
+  );
+};
+
+export default Login;
