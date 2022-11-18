@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import "./style.css";
 
 const Login = () => {
 const [errorMessage, setErrorMessage] = useState("");
 const [defaultAccount, setDefaultAccount] = useState("");
 
-const connectWallet = () => {
+const connectWallet = ({accountInfo}) => {
+    console.log(accountInfo)
+
     if (window.etherium){
         window.etherium.request({
             method: "eth_requestAccounts",

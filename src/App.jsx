@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Course from "./pages/Course";
 import Home from "./pages/Home";
@@ -27,10 +27,9 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Login />} />
-            <Route index element={<Course />} />
-            <Route index element={<Home />} />
+          <Route path="/" element={<Login accountInfo={connectedAccount}/>}>
+            <Route path="/course" index element={<Course />} />
+            <Route path="/home"  element={<Navigate to="/home" />}/>
             <Route path="*" element={<Error404 />} />
           </Route>
         </Routes>
