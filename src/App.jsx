@@ -6,10 +6,9 @@ import Course from "./pages/Course";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Error404 from "./pages/404";
-import Roadmap from "./pages/Roadmap/Roadmap";
 import CourseDetail from "./pages/Courses/CourseDetail";
 
-//
+// 
 import {
   isWallectConnected,
   checkIfTransactionExist,
