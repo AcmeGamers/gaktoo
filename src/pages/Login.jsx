@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Layout from "../layouts/layout";
 import "./style.css";
 
 const Login = (props) => {
@@ -18,13 +19,13 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <Layout>
       <h2>Login to Gaktoo</h2>
       <p>or connect wallet to start your learning journey</p>
       <button onClick={connectWallet}>Connect</button>
       <h3>Address: {defaultAccount} </h3>
       {errorMessage}
-    </div>
+    </Layout>
   );
 };
 
