@@ -5,8 +5,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 function Form() {
   return (
     <div className="form-page">
+      
       <form>
-        <div className="form-container">
+        <div className="form-container animated shake">
           <input className="name-input" type="text" placeholder="your name" />
 
           <label>
