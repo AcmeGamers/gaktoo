@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 function Form() {
   return (
-    <div className="form-page">
+    <div className="form-page wow fadeInUp">
       <form>
-        <div className="form-container wow fadeInUp">
+        <div className="form-container  wow fadeInUp animated delay-2s">
           <input className="name-input" type="text" placeholder="your name" />
 
-          <label className="wow fadeInUp">
+          <label className="wow fadeInUp animated delay-2s">
             What is your purpose?:
             <input type="checkbox" name="purpose" value="fullstack" />
             To change career to IT
@@ -23,7 +23,7 @@ function Form() {
           </label>
         </div>
 
-        <div className="form-container wow fadeInUp">
+        <div className="form-container wow fadeInUp animated delay-2s">
           <label>
             What is your goal?:
             <input type="radio" name="goal" value="fullstack" />
@@ -39,7 +39,7 @@ function Form() {
           </label>
         </div>
 
-        <div className="form-container">
+        <div className="form-container wow shake">
           <label>
             What is your current level?:
             <input type="radio" name="goal" value="fullstack" />
@@ -53,7 +53,7 @@ function Form() {
           </label>
         </div>
 
-        <div className="form-container">
+        <div className="form-container wow fadeInUp animated delay-2s">
           <label>
             Pick your aimed duration to achieve your goal:
             <select
