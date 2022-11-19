@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Error404 from "./pages/404";
 import CourseDetail from "./pages/Courses/CourseDetail";
 import Roadmap from "./pages/Roadmap/Roadmap";
-import "./wow";
+import WOW from "wow";
 //
 import {
   isWallectConnected,
@@ -27,6 +27,7 @@ export default function App() {
     checkIfTransactionExist();
   }, []);
 
+  //wow
   useEffect(() => {
     new WOW.WOW({
       live: false,
