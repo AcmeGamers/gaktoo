@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Login = () => {
-const [errorMessage, setErrorMessage] = useState("");
-const [defaultAccount, setDefaultAccount] = useState("");
+const Login = (props) => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const [defaultAccount, setDefaultAccount] = useState("");
 
-const connectWallet = ({accountInfo}) => {
-
-    if (accountInfo){
-      setDefaultAccount(accountInfo)
-    }else{
-        setDefaultAccount("Please install metamask");
+  const connectWallet = () => {
+    if (props.accountInfo) {
+      setDefaultAccount(props.accountInfo);
+    } else {
+      setDefaultAccount("Please install metamask");
     }
-};
+  };
 
-const accountChangeHandler = (newAccounts) => {
+  const accountChangeHandler = (newAccounts) => {
     setDefaultAccount(newAccounts);
-}
+  };
 
   return (
     <div>
