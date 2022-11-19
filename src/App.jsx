@@ -27,12 +27,11 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login accountInfo={connectedAccount} />}>
-            <Route path="/course" index element={<Course />} />
-            <Route path="/roadmap" index element={<Roadmap />} />
-            <Route path="/home" element={<Navigate to="/home" />} />
-            <Route path="*" element={<Error404 />} />
-          </Route>
+          <Route path="/" element={<Login accountInfo={connectedAccount} />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/home" element={<Navigate to="/home" />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </div>

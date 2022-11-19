@@ -1,12 +1,12 @@
-import React from 'react'
-import Form from './Form'
+import React from "react";
+import Form from "../../components/Form";
 const Roadmap = () => {
   return (
-    <div>Roadmap
+    <div>
+      Roadmap
       <Form />
-      
     </div>
-  )
-}
+  );
+};
 
-export default Roadmap
+export default Roadmap;
