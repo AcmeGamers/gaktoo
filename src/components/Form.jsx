@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import WOW from 'wowjs';
 function Form() {
   return (
     <div className="form-page">
