@@ -7,8 +7,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Error404 from "./pages/404";
 import CourseDetail from "./pages/Courses/CourseDetail";
+import Roadmap from "./pages/Roadmap/Roadmap";
 
-// 
+//
 import {
   isWallectConnected,
   checkIfTransactionExist,
