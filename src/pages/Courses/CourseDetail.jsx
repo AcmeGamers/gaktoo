@@ -8,18 +8,39 @@ export default function CourseDetail() {
 
   if (!course) {
     return (
-      <Error404
-        title="Course Not Found"
-        description="The course you are looking for does not exist."
-      />
+      <Layout>
+        <Error404
+          title="Course Not Found"
+          description="The course you are looking for does not exist."
+        />
+      </Layout>
     );
   }
 
+  // Fucntions
+  function Stack(props) {
+    return <></>;
+  }
+
   return (
-    <Layout>
+    <Layout className="row space-between">
       <div>
         <h1>{course.name}</h1>
+        <img src={"/images/" + course.image} alt={course.name} width="800" />
         <p>{course.description}</p>
+      </div>
+
+      <div>
+        <h2>Are you Ready?</h2>
+        <button
+          className="btn"
+          style={{
+            border: "solid #FFC107",
+            padding: "10px 20px",
+          }}
+        >
+          Start The Course
+        </button>
       </div>
     </Layout>
   );
