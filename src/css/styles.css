@@ -197,10 +197,13 @@ header {
 */
 
 /* 
-===========
----- @Pages
-===========
+=============
+---- @Layouts
+=============
 */
+.layout_1 {
+  padding: 3% 5%;
+}
 
 /* 
 ==========
@@ -213,10 +216,6 @@ header {
 ---- @Course Page
 =================
 */
-
-.course_page {
-  padding: 3% 5%;
-}
 
 /* Heading */
 .course_page__section_1 > div > button:nth-child(2) {
@@ -233,6 +232,7 @@ header {
 }
 .course_page__cards_grid > .course_page__card {
   width: 49%;
+  margin-bottom: 2rem;
 }
 
 /* Card */

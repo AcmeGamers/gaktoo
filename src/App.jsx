@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import "./App.css";
+
+//
 import Course from "./pages/Course";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Error404 from "./pages/404";
 import Roadmap from "./pages/Roadmap/Roadmap";
+import CourseDetail from "./pages/Courses/CourseDetail";
+
+//
 import {
   isWallectConnected,
   checkIfTransactionExist,
@@ -29,6 +33,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Login accountInfo={connectedAccount} />} />
           <Route path="/course" element={<Course />} />
+          <Route path="/course/*" element={<CourseDetail />} />
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />
