@@ -315,20 +315,22 @@ header {
 ---- @RoadmapForm
 ===========
 */
+
+.roadmap-desc{
+  justify-content: center;
+  text-align: center;
+  padding-top:5rem;
+}
 .form-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
+ 
   width: 100%;
   height: 100vh;
   background: var(--bg);
-  text-align: center;
+  align-items: center;
 }
 
-form {
-  padding: 20px 0;
-}
 form input {
   border: 1px solid rgba(252, 252, 252, 0.4);
   background-color: rgba(252, 252, 252, 0.2);
@@ -336,14 +338,16 @@ form input {
   border-radius: 3px;
   font-family: "Source Sans Pro", sans-serif;
   display:flex;
-  text-align: center;
+
   font-size: 18px;
-  color: white;
+  color: #fff;
   font-weight: 300;
 }
 
 .name-input{
   display:block;
+  margin:20px 0;
+  color:#3d9edf
 }
 /* 
 ===========

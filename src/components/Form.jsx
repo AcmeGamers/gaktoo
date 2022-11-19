@@ -13,13 +13,13 @@ function Form() {
             What is your purpose?:
             <input type="checkbox" name="purpose" value="fullstack" />
             To change career to IT
-            <input type="radio" name="goal" value="frontend" />
+            <input type="checkbox" name="goal" value="frontend" />
             To improve skills and get a job
-            <input type="radio" name="goal" value="fullstack" />
+            <input type="checkbox" name="goal" value="fullstack" />
             To improve skills while in school
-            <input type="radio" name="goal" value="datascientist" />
+            <input type="checkbox" name="goal" value="datascientist" />
             To start my own business
-            <input type="radio" name="goal" value="fullstack" />
+            <input type="checkbox" name="goal" value="fullstack" />
             Hobbyist
           </label>
         </div>
