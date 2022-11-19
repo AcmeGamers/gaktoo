@@ -8,7 +8,7 @@ function Form() {
         <div className="form-container wow fadeInUp">
           <input className="name-input" type="text" placeholder="your name" />
 
-          <label className="animate__animated animate__zoomI">
+          <label className="wow fadeInUp">
             What is your purpose?:
             <input type="checkbox" name="purpose" value="fullstack" />
             To change career to IT
@@ -23,7 +23,7 @@ function Form() {
           </label>
         </div>
 
-        <div className="form-container">
+        <div className="form-container wow fadeInUp">
           <label>
             What is your goal?:
             <input type="radio" name="goal" value="fullstack" />

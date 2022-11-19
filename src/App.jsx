@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Error404 from "./pages/404";
 import CourseDetail from "./pages/Courses/CourseDetail";
 import Roadmap from "./pages/Roadmap/Roadmap";
-import WOW from "wow";
+import WOW from "wowjs";
 //
 import {
   isWallectConnected,
