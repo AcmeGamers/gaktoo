@@ -5,12 +5,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 function Form() {
   return (
     <div className="form-page">
-      
       <form>
-        <div className="form-container animated shake">
+        <div className="form-container wow fadeInUp">
           <input className="name-input" type="text" placeholder="your name" />
 
-          <label>
+          <label className="animate__animated animate__zoomI">
             What is your purpose?:
             <input type="checkbox" name="purpose" value="fullstack" />
             To change career to IT
