@@ -1,4 +1,4 @@
-import Form from "../../../components/Form";
+import Form from "../../components/Form";
 import React from "react";
 import "../../../css/animate.css";
 const Roadmap = () => {
