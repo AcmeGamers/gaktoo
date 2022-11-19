@@ -4,7 +4,7 @@ import "../../../css/animate.css";
 const Roadmap = () => {
   return (
     <div>
-      <div className="roadmap-desc animated shake">
+      <div className="roadmap-desc wow tada">
         <h1 class>Roadmap</h1>
 
         <h2 className="wow bounce">
