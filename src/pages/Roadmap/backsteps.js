@@ -13,8 +13,7 @@ const backsteps = [
     id: 2,
 
     title: "Basic Frontend Knowledge",
-    imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+    imgURL: "../../../images/frontend.png",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -24,7 +23,7 @@ const backsteps = [
 
     title: "OS and General Information",
     imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+      "../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -32,8 +31,7 @@ const backsteps = [
   {
     id: 4,
     title: "Language: JavaScript",
-    imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+    imgURL:"../../../images/setting.jpg",   
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -41,8 +39,7 @@ const backsteps = [
   {
     id: 5,
     title: "Language Options : Java / C# / PHP / Rust / Go / Python / Ruby ",
-    imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+    imgURL:"../../../images/setting.jpg",   
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -50,8 +47,7 @@ const backsteps = [
   {
     id: 6,
     title: "Version Control Systems - Github",
-    imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+    imgURL:"../../../images/setting.jpg",   
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -59,8 +55,7 @@ const backsteps = [
   {
     id: 7,
     title: "Relational Database",
-    imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/People%27s_Flag_of_Milwaukee.svg/1200px-People%27s_Flag_of_Milwaukee.svg.png",
+    imgURL:"../../../images/setting.jpg",   
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -68,7 +63,7 @@ const backsteps = [
   {
     id: 8,
     title: "NoSQL Database",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -76,7 +71,7 @@ const backsteps = [
   {
     id: 9,
     title: "Advanced Database",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -84,7 +79,7 @@ const backsteps = [
   {
     id: 10,
     title: "APIs",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -92,7 +87,7 @@ const backsteps = [
   {
     id: 11,
     title: "Web Security",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -100,7 +95,7 @@ const backsteps = [
   {
     id: 12,
     title: "CI / CD",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -108,7 +103,7 @@ const backsteps = [
   {
     id: 13,
     title: "Deisgn and Development Principles",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -116,7 +111,7 @@ const backsteps = [
   {
     id: 14,
     title: "Search Engines",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -124,7 +119,7 @@ const backsteps = [
   {
     id: 15,
     title: "Message Brokers",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -132,7 +127,7 @@ const backsteps = [
   {
     id: 16,
     title: "Web Sockets",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -140,7 +135,7 @@ const backsteps = [
   {
     id: 17,
     title: "Web Servers",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",
@@ -148,7 +143,7 @@ const backsteps = [
   {
     id: 18,
     title: "Keep Learning",
-    imgURL: "",
+    imgURL:"../../../images/setting.jpg",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",

@@ -8,6 +8,7 @@ function createCard(backstep){
   return(<Card 
     className={backstep.className}
     key={backstep.id}
+    desc={backstep.desc}
     title={backstep.title}
     img={backstep.imgURL}
     course={backstep.course}

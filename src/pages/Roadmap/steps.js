@@ -11,7 +11,7 @@ const steps = [
   {
     id: "step2",
     title: "HTML",
-    imgURL: "",
+    imgURL: "../../../images/html.png",
     course: "Lorem Ipsum",
     mentor: "Lorem Ipsum",
     student: "Lorem",

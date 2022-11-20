@@ -8,10 +8,11 @@ function Card(props) {
       <dl className="card">
         <div className="top">
           <dt className="title">{props.title}</dt>
-          <dd className="desc">{props.desc}</dd>
+        
           <img className="circle-img" src={props.img} alt="avatar_img" />
         </div>
-        <div className="bottom theme1">
+        <div className="bottom">
+          <p className="desc">{props.desc}</p>
           <p className="info">{props.course}</p>
           <p className="info">
             {props.mentor} | {props.student}
