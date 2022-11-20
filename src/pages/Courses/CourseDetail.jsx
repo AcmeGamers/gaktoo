@@ -2,6 +2,14 @@ import Layout from "../../layouts/layout";
 import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
 
+let host = "localhost",
+  user = "root",
+  password = "",
+  port = "3306";
+
+// Use Dolt to create a new database in js
+let db = new DoltDB("courses", { host, user, password, port });
+
 export default function CourseDetail() {
   const id = window.location.pathname.split("/")[2],
     course = CourseInfo.find((course) => course.id == id);
