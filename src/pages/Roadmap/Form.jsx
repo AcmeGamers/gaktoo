@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 //   submittedValues === frontend ? : <Navigate to="/result1" /> : <Navigate to="/result2" />
 //   }
 //   </div>
-// }
+//  }
 
 export default function Form() {
   return (

@@ -11,7 +11,6 @@ const backsteps = [
   },
   {
     id: 2,
-
     title: "Basic Frontend Knowledge",
     imgURL: "../../../images/frontend.png",
     course: "Lorem Ipsum",
