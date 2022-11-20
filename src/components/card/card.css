@@ -20,6 +20,7 @@
   padding: 25px;
   max-width: 800px;
   min-width: 400px;
+  min-height: auto;
   text-align: center;
   
 }
@@ -30,7 +31,7 @@
   padding: 25px 15px;
   background-color: #81ecec;
   margin: 50px 0;
-  height: 200px;
+  height: auto;
   box-shadow: 0 2px 5px #ccc;
   text-align: left;
 }
@@ -69,7 +70,7 @@
   margin-top: 120px;
 }
 
-.info {
+.info, .desc {
   margin: 20px 0;
   color: #1a7e76;
 }
