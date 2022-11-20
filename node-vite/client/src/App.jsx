@@ -53,8 +53,8 @@ export default function App() {
 
           {/* Course */}
           <Route path="/courses" element={<Course />} />
-          <Route path="/course/*" element={<CourseDetail />} />
-          <Route path="/course/:course/1" element={<CourseContent />} />
+          <Route path="/course/*" element={<CourseDetail />}></Route>
+          <Route path="/course/:course/:content" element={<CourseContent />} />
 
           {/* Roadmaps */}
           <Route path="/roadmap" element={<Roadmap />} />

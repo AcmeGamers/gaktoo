@@ -8,7 +8,7 @@ export default function CourseContent() {
     course = CourseInfo.find((course) => course.id == courseID),
     contentTitle = window.location.pathname.split("/")[2];
 
-  contentTitle.toLowerCase().split(" ").join("-");
+  contentTitle.split(" ").join("-");
 
   let content = ContentInfo.find((content) => content.title == contentTitle);
 
