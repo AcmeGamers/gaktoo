@@ -1,0 +1,213 @@
+/* 
+================
+= Table of Index
+================
+-- @Display
+-- @Flexbox
+-- @Margin
+-- @Styling
+---- @Colors
+---- @Orders
+
+-- @Components
+---- @Header
+---- @Footer
+*/
+
+/* 
+========
+@Display
+========
+*/
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+
+.full-width {
+  width: -webkit-fill-available !important;
+}
+.screen-height {
+  height: 100vh;
+}
+.min-screen-height {
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 160px;
+}
+
+/* 
+========
+@Flexbox
+========
+*/
+.flex {
+  display: flex;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  align-items: center;
+}
+.hr-left {
+  align-items: flex-start;
+}
+.hr-right {
+  align-items: flex-end;
+}
+.vr-top {
+  align-items: flex-start;
+}
+.vr-center {
+  justify-content: center;
+}
+.vr-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* 
+=======
+@Margin
+=======
+*/
+
+.mg-lr-10px {
+  margin: 0 10px;
+}
+.mg-lr-15px {
+  margin: 0 15px;
+}
+.mg-r-10px {
+  margin-right: 10px;
+}
+
+.mg-r-15px {
+  margin-right: 15px;
+}
+.mg-l-15px-r-10px {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+/* 
+========
+@Styling
+========
+*/
+.px-5-radius {
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.no-bullets {
+  list-style: none;
+}
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.no-width {
+  width: 0;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.text-center {
+  text-align: center;
+}
+
+.btn-bordered {
+  border-radius: 5pc;
+}
+
+/* 
+=======
+@Colors
+=======
+*/
+.white-color {
+  color: white !important;
+}
+.primary-color {
+  color: var(--primary) !important;
+}
+.linear-bg-0 {
+  background: var(--bg);
+}
+.linear-bg-180 {
+  background: var(--bg-2);
+}
+
+/* 
+=======
+@Orders
+=======
+*/
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order: 4;
+}
+.order-5 {
+  order: 5;
+}
+
+/* Priorities */
+
+.priority-1 {
+  z-index: 10 !important;
+}
+.priority-2 {
+  z-index: 7 !important;
+}
+.priority-3 {
+  z-index: 5 !important;
+}
+.priority-4 {
+  z-index: 3 !important;
+}
+.priority-5 {
+  z-index: 1 !important;
+}
+.priority--1 {
+  z-index: -1 !important;
+}

@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* 
+================
+= Table of Index
+================
+-- @Root
+-- @Basic
+-- @ScrollBar
+-- @Components
+---- @Header
+---- @Button
+---- @Card
+---- @Footer
+
+-- @Pages
+---- @Home
+---- @Error
+*/
+
+/* 
+=====
+@Root
+=====
+*/
+
+:root {
+  --bg: #f5f5f5;
+  --bg-main-content: #000;
+
+  /* Primary */
+  --primary: #3d9edf;
+  --secondary: #ff4131;
+  --primary-light: #c3c4ef;
+  --secondary-light: #ffb8bb;
+  --basic-color: #d9d9d9;
+
+  /* Button */
+  --btn-color-1: #f3f4f6;
+  --btn-color-2: #e5e7eb;
+
+  /* Link */
+  --link-color: #fff;
+
+  /* Font */
+  --p-font: 16px;
+  --font-family: "Inter", system-ui;
+  --font-family-2: "Roboto", system-ui;
+  --font-weight-1: 400;
+  --font-weight-2: 700;
+
+  /* Priority Order */
+  --priority-1: 10;
+  --priority-2: 7;
+  --priority-3: 5;
+  --priority-4: 3;
+  --priority-5: 1;
+  --priority--1: -1;
+
+  /* Customs */
+  --logo-size: 70px;
+  --profile-size: 53px;
+  --social-icons-size: 30px;
+  --navigation-width: 25vw;
+  --minimal-radius: 5px;
+
+  /* Scroll bar radius */
+  --scroll-bar-radius: 10px;
+
+  /* Preview Card */
+  --card-preview: rgba(0, 82, 137, 0.71);
+  --card-preview-radius: 20px;
+}
+
+body {
+  margin: 0;
+  color: var(--bg-main-content);
+  background: var(--bg);
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 
+=============
+-- @ScrollBar
+=============
+*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e9e9e9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  border-radius: var(--scroll-bar-radius);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777777;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  border-radius: var(--scroll-bar-radius);
+}
+
+/* 
+==============
+-- @Components
+==============
+*/
+
+/* 
+============
+---- @Header
+============
+*/
+
+header {
+  padding: 1rem 5%;
+  background: #fff;
+  color: #000;
+}
+
+.header__userImage {
+  width: 50px;
+  height: 50px;
+  background: var(--basic-color);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* 
+============
+---- @Layout
+============
+*/
+
+/* 
+============
+---- @Button
+============
+*/
+.btn {
+  padding: 0px 30px;
+  background: transparent;
+  color: var(--bg-main-content);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #d9d9d9;
+}
+.btn.active {
+  background-color: #5063f3;
+  color: #fff;
+}
+
+.btn-2 {
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--minimal-radius);
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
+.btn-2:hover {
+  background: var(--primary);
+  color: #fff;
+}
+/* 
+==========
+---- @Card
+==========
+*/
+
+/* 
+============
+---- @Footer
+============
+*/
+
+/* 
+=============
+---- @Layouts
+=============
+*/
+.layout_1 {
+  padding: 3% 5%;
+}
+
+/* 
+==========
+---- @Home
+==========
+*/
+
+/* 
+=================
+---- @Course Page
+=================
+*/
+
+/* Heading */
+.course_page__section_1 > div > button:nth-child(2) {
+  margin-left: 1rem;
+}
+.course_page__section_1 {
+  margin-bottom: 5rem;
+}
+
+/* Cards List */
+.course_page__cards_list > .course_page__card {
+  margin-bottom: 2rem;
+  width: -webkit-fill-available;
+}
+.course_page__cards_grid > .course_page__card {
+  width: 49%;
+  margin-bottom: 2rem;
+}
+
+/* Card */
+.course_page__card {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.course_page__card_image {
+  width: 30%;
+  background: var(--basic-color);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.course_page__card_content {
+  margin: 2rem 0;
+  margin-left: 3rem;
+  width: 60%;
+}
+.course_page__card_content_info > p {
+  line-height: 2;
+}
+/* Category List */
+.span_list__span.row {
+  background: var(--basic-color);
+  margin-right: 0.8rem;
+  border-radius: 5px;
+  padding: 0.1rem 0.6rem;
+  margin-bottom: 1rem;
+}
+.span_list__span.row > p {
+  margin: 0;
+}
+
+/*  */
+.course_page__cards_list__card .cross {
+  width: 20px;
+  height: 20px;
+  background: var(--basic-color);
+  margin-right: 1rem;
+}
+
+.course_page__cards_list__card .cross:before,
+.course_page__cards_list__card .cross:after {
+  content: "";
+  width: 2px;
+  height: 10px;
+  background: #aeaeae;
+}
+
+.course_page__cards_list__card .cross:after {
+  transform: translateX(-2px) rotate(90deg);
+}
+
+.course_page__cards_list__card p {
+  margin: 0.5rem 0;
+}
+
+/* 
+=============
+---- @Profile
+=============
+*/
+
+/* 
+=================
+---- @Marketplace
+=================
+*/
+
+/* 
+===========
+---- @Error
+===========
+*/
+
+
+/* 
+===========
+---- @RoadmapForm
+===========
+*/
+
+.roadmap-desc{
+  justify-content: center;
+  text-align: center;
+  padding-top:5rem;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  align-items: center;
+}
+label{
+  border:#c6c6c6 2px solid;
+  border-radius: 10px;
+  padding:20px;
+}
+
+
+
+form input {
+  border: 1px solid rgba(179, 179, 179, 0.4);
+  background-color: rgba(203, 221, 249, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  display:flex;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+
+}
+
+.name-input{
+  display:block;
+  margin:20px 0;
+  color:#3d9edf
+}
+/* 
+===========
+---- @RoadmapResults
+===========
+*/
