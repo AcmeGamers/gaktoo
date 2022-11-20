@@ -14,7 +14,7 @@ function Card(props) {
         <div className="bottom theme1">
           <p className="info">{props.course}</p>
           <p className="info">
-            {props.mentor} | {props.students}
+            {props.mentor} | {props.student}
           </p>
         </div>
       </dl>

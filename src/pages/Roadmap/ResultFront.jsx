@@ -4,32 +4,22 @@ import Card from "../../components/card/Card";
 import steps from "./steps.js";
 //
 const ResultFront = () => {
-  return (
-    <div className="wow fadeInUp" data-wow-duration="4s">
-      <Card
-        // style={{ theme: "theme2" }}
-        title={steps[0].title}
-        img={steps[0].imgURL}
-        course={steps[0].course}
-        mentor={steps[0].mentor}
-        student={steps[0].student}
-      />
-      <Card
-        title={steps[1].title}
-        img={steps[1].imgURL}
-        course={steps[1].course}
-        mentor={steps[0].mentor}
-        student={steps[0].student}
-      />
-      <Card
-        title={steps[2].title}
-        img={steps[2].imgURL}
-        course={steps[2].course}
-        mentor={steps[0].mentor}
-        student={steps[0].student}
-      />
-    </div>
-  );
-};
+  function createFrontCard(step){
+    return(<Card 
+      key={step.id}
+      title={step.title}
+      img={step.imgURL}
+      course={step.course}
+      mentor={step.mentor}
+      student={step.student} />)
+  }
+  
+    return (
+      <div className="wow fadeInUp" data-wow-duration="4s">
+        {steps.map(createFrontCard)}
+        
+      </div>
+    );
+  };
 
 export default ResultFront;

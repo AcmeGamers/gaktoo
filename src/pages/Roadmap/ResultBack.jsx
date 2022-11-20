@@ -4,17 +4,21 @@ import backsteps from "./backsteps.js";
 
 const ResultBack = () => {
 
-function createCard(){
-  return(<Card title={backsteps[0].title}
-    img={backsteps[0].imgURL}
-    course={backsteps[0].course}
-    mentor={backsteps[0].mentor}
-    student={backsteps[0].student} />)
+function createCard(backstep){
+  return(<Card 
+    className={backstep.className}
+    key={backstep.id}
+    title={backstep.title}
+    img={backstep.imgURL}
+    course={backstep.course}
+    mentor={backstep.mentor}
+    student={backstep.student} />)
 }
 
   return (
     <div className="wow fadeInUp" data-wow-duration="4s">
       {backsteps.map(createCard)}
+      
     </div>
   );
 };

@@ -14,12 +14,14 @@
   margin: 20px 0 30px;
 }
 
+
 .card-container {
   margin: 0 auto;
   padding: 25px;
-  max-width: 400px;
+  max-width: 800px;
   min-width: 400px;
   text-align: center;
+  
 }
 .card {
   font-family: sans-serif;
