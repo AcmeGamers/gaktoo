@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -22,13 +23,24 @@ import { useGlobalState } from "./store";
 
 export default function App() {
   // States
-  const [connectedAccount] = useGlobalState("connectedAccount");
+  const [connectedAccount] = useGlobalState("connectedAccount"),
+    [data, setData] = useState(),
+    urlWithProxy = "/api/v1";
 
   // Readers
   useEffect(() => {
     isWallectConnected();
     checkIfTransactionExist();
   }, []);
+
+  function getDataFromServer() {
+    axios
+      .get(urlWithProxy)
+      .then((res) => setData(res.data))
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   return (
     <div>
@@ -46,32 +58,10 @@ export default function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
+      {/* 
+      <button onClick={getDataFromServer}>Access server using proxy</button>
+      <p>data : {data}</p>
+      */}
     </div>
   );
 }
-
-// import axios from "axios";
-// import { useState } from "react";
-
-// function App() {
-//   const [data, setData] = useState();
-//   const urlWithProxy = "/api/v1";
-
-//   function getDataFromServer() {
-//     axios
-//       .get(urlWithProxy)
-//       .then((res) => setData(res.data))
-//       .catch((err) => {
-//         console.error(err);
-//       });
-//   }
-
-//   return (
-//     <div className="App">
-//       <button onClick={getDataFromServer}>Access server using proxy</button>
-//       <p>data : {data}</p>
-//     </div>
-//   );
-// }
-
-// export default App;
