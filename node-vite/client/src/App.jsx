@@ -20,12 +20,13 @@ import {
   connectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
+import SignUp from "./pages/SignUp";
 
 export default function App() {
   // States
   const [connectedAccount] = useGlobalState("connectedAccount"),
     [data, setData] = useState(),
-    urlWithProxy = "/api/v1";
+    urlWithProxy = "/api/signup";
 
   // Readers
   useEffect(() => {
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="/result-front" element={<ResultFront />} />
 
           <Route path="/result-back" element={<ResultBack />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />
         </Routes>

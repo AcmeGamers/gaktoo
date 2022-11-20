@@ -27,3 +27,4 @@ dist-ssr
 # SQL Temp
 .tmp
 .dolt
+data.sql

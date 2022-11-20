@@ -160,6 +160,9 @@
 .white-color {
   color: white !important;
 }
+.red-color {
+  color: red !important;
+}
 .primary-color {
   color: var(--primary) !important;
 }
