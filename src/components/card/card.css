@@ -14,7 +14,6 @@
   margin: 20px 0 30px;
 }
 
-
 .card-container {
   margin: 0 auto;
   padding: 25px;
@@ -22,7 +21,6 @@
   min-width: 400px;
   min-height: auto;
   text-align: center;
-  
 }
 .card {
   font-family: sans-serif;
@@ -52,8 +50,8 @@
   color: #2d3436;
   display: flex;
   flex: 1;
-  margin: 0;
-
+  margin: 25px 10px;
+  cursor: pointer;
 }
 
 .card img {
@@ -71,7 +69,14 @@
   margin-top: 120px;
 }
 
-.info, .desc {
+.info {
   margin: 20px 0;
   color: #1a7e76;
+  cursor: pointer;
+}
+.desc {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333333;
+  cursor: pointer;
 }
