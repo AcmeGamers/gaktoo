@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// const submittedValues = false;
+
+// function showResult(){
+//   return
+//    <div> {
+//   submittedValues === frontend ? : <Navigate to="/result1" /> : <Navigate to="/result2" />
+//   }
+//   </div>
+// }
+
 export default function Form() {
   return (
     <div className="form-page wow fadeInUp">
@@ -9,36 +19,31 @@ export default function Form() {
           <input className="name-input" type="text" placeholder="your name" />
 
           <label className="wow fadeInUp animated delay-2s">
-            What is your purpose?:
-            <input type="checkbox" name="purpose" value="fullstack" />
-            To change career to IT
-            <input type="checkbox" name="goal" value="frontend" />
-            To improve skills and get a job
-            <input type="checkbox" name="goal" value="fullstack" />
+            <h3>What is your purpose?:</h3>
+            <input type="checkbox" name="goal" value="job" />
+            To improve skills and get a job/raise salary
+            <input type="checkbox" name="goal" value="school" />
             To improve skills while in school
-            <input type="checkbox" name="goal" value="datascientist" />
+            <input type="checkbox" name="goal" value="business" />
             To start my own business
-            <input type="checkbox" name="goal" value="fullstack" />
-            Hobbyist
           </label>
         </div>
 
         <div className="form-container wow fadeInUp animated delay-2s">
           <label>
-            What is your goal?:
-            <input type="radio" name="goal" value="fullstack" />
-            Full-Stack Developer
+            <h3>What is your goal?:</h3>
             <input type="radio" name="goal" value="frontend" />
             Frontend
-            <input type="radio" name="goal" value="fullstack" />
+            <input type="radio" name="goal" value="backend" />
             Backend
-            <input type="radio" name="goal" value="datascientist" />
-            Data Scientist
             <input type="radio" name="goal" value="fullstack" />
-            UI/UX Designer
+            Full-Stack Developer
+            <p>Data Scientist</p>
+            <p>UI/UX Designer</p>
           </label>
         </div>
 
+        {/* saving question for later use : toomany questions 
         <div className="form-container wow shake">
           <label>
             What is your current level?:
@@ -51,24 +56,25 @@ export default function Form() {
             <input type="radio" name="goal" value="fullstack" />
             3+ years mid/senior
           </label>
-        </div>
+        </div> */}
 
         <div className="form-container wow fadeInUp animated delay-2s">
           <label>
-            Pick your aimed duration to achieve your goal:
+            <h3>Pick your aimed duration to achieve your goal:</h3>
             <select
               name="duration"
               // value={this.state.value}
               // onChange={this.handleChange}
             >
-              <option value="1month">1-2 Month</option>
               <option value="3months">3 Months</option>
               <option value="6months">6 Months</option>
               <option value="9month">9 Months</option>
             </select>
           </label>
 
-          <button type="submit">Submit</button>
+          <button type="submit" onClick="">
+            Submit
+          </button>
         </div>
       </form>
     </div>
