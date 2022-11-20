@@ -55,7 +55,10 @@ export default function App() {
           <Route path="/result-front" element={<ResultFront />} />
 
           <Route path="/result-back" element={<ResultBack />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/signup"
+            element={<SignUp accountInfo={connectedAccount} />}
+          />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />
         </Routes>

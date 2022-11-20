@@ -1,10 +1,20 @@
 import Layout from "../layouts/layout";
 import { useRef, useState } from "react";
+import axios from "axios";
 
-export default function SignUp() {
+export default function SignUp(props) {
   let name = useRef(),
     username = useRef(),
     email = useRef();
+
+  function getDataFromServer(data) {
+    axios
+      .post("/api/signup", data)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+
+    // console.log(data);
+  }
 
   const [data, setData] = useState();
 
@@ -13,10 +23,10 @@ export default function SignUp() {
       <h1>Sign Up</h1>
       <form
         action="/api/signup"
+        method="POST"
         className="signup__form"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(e.target.elements);
 
           // Checks if fields are not filled, give them class invalid if not
           if (name.current.value === "") name.current.classList.add("invalid");
@@ -34,6 +44,16 @@ export default function SignUp() {
               e.target.classList.remove("invalid");
             }
           });
+
+          if (name.current.value != "" && username.current.value != "") {
+            getDataFromServer({
+              id: props.accountInfo,
+              name: name.current.value,
+              username: username.current.value,
+              email: email.current.value,
+              created_at: new Date().toLocaleString(),
+            });
+          }
 
           // TODO:
           // check if the username is already taken
