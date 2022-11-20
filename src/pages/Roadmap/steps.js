@@ -19,7 +19,7 @@ const steps = [
   {
     id: "step3",
     title: "CSS",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -27,7 +27,7 @@ const steps = [
   {
     id: "step4",
     title: "JavaScript Fundementals",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -35,7 +35,7 @@ const steps = [
   {
     id: "step5",
     title: "JavaScript Advanced",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -44,7 +44,7 @@ const steps = [
     id: "step6",
 
     title: "Version Control Systems - Github",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -53,7 +53,7 @@ const steps = [
     id: "step7",
 
     title: "Web Security Knowledge",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -62,7 +62,7 @@ const steps = [
     id: "step8",
 
     title: "Package Managers",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -71,7 +71,7 @@ const steps = [
     id: "step9",
 
     title: "Build Tools",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -80,7 +80,7 @@ const steps = [
     id: "step10",
 
     title: "Frameworks - Modern CSS",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -89,7 +89,7 @@ const steps = [
     id: "step11",
 
     title: "Frameworks - React.js",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -98,7 +98,7 @@ const steps = [
     id: "step12",
 
     title: "Frameworks - Angular",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -106,7 +106,7 @@ const steps = [
   {
     id: "step13",
     title: "Frameworks - Vue.js",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -114,7 +114,7 @@ const steps = [
   {
     id: "step14",
     title: "GraphQL Server",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -122,7 +122,7 @@ const steps = [
   {
     id: "step15",
     title: "Static Site Generator",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -130,7 +130,7 @@ const steps = [
   {
     id: "step16",
     title: "Mobile Application",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -138,7 +138,7 @@ const steps = [
   {
     id: "step17",
     title: "Desktop Application",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
@@ -146,7 +146,7 @@ const steps = [
   {
     id: "step18",
     title: "Keep Learning",
-    imgURL: "",
+    imgURL: "../../../images/setting.jpg",
     course: "Recomended Course",
     mentor: "Recommended Mentor",
     student: "Meet students who take same course as this",
