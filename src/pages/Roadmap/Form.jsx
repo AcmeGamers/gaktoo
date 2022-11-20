@@ -1,21 +1,17 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-
 // const submittedValues = false;
 
 // function showResult(){
 //   return
 //    <div> {
-//   submittedValues === frontend ? : <Navigate to="/result1" /> : <Navigate to="/result2" /> 
+//   submittedValues === frontend ? : <Navigate to="/result1" /> : <Navigate to="/result2" />
 //   }
 //   </div>
 // }
 
-
 export default function Form() {
-
   return (
     <div className="form-page wow fadeInUp">
       <form>
@@ -30,25 +26,20 @@ export default function Form() {
             To improve skills while in school
             <input type="checkbox" name="goal" value="business" />
             To start my own business
-          
           </label>
         </div>
 
         <div className="form-container wow fadeInUp animated delay-2s">
           <label>
             <h3>What is your goal?:</h3>
-            <input type="radio" name="goal" value="fullstack" />
-            Full-Stack Developer
             <input type="radio" name="goal" value="frontend" />
             Frontend
-            <input type="radio" name="goal" value="fullstack" />
+            <input type="radio" name="goal" value="backend" />
             Backend
-            <p>
-            Data Scientist
-            </p>
-            <p>
-            UI/UX Designer
-            </p>
+            <input type="radio" name="goal" value="fullstack" />
+            Full-Stack Developer
+            <p>Data Scientist</p>
+            <p>UI/UX Designer</p>
           </label>
         </div>
 
@@ -81,7 +72,9 @@ export default function Form() {
             </select>
           </label>
 
-          <button type="submit" onClick="">Submit</button>
+          <button type="submit" onClick="">
+            Submit
+          </button>
         </div>
       </form>
     </div>

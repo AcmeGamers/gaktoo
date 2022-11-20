@@ -20,6 +20,7 @@ import {
 import { useGlobalState } from "./store";
 
 
+
 export default function App() {
   // States
   const [connectedAccount] = useGlobalState("connectedAccount");
