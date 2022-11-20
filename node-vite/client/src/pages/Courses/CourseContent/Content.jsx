@@ -1,13 +1,27 @@
+import CourseInfo from "../courseInfo.json";
 import ContentInfo from "./contentInfo.json";
-import Layout from "../../layouts/layout";
-import Error404 from "../404";
+import Layout from "../../../layouts/layout";
+import Error404 from "../../404";
 
-export default function Content() {
-  const title = window.location.pathname.split("/")[2];
+export default function CourseContent() {
+  const courseID = window.location.pathname.split("/")[2],
+    course = CourseInfo.find((course) => course.id == courseID),
+    contentTitle = window.location.pathname.split("/")[2];
 
-  title.toLowerCase().split(" ").join("-");
+  contentTitle.toLowerCase().split(" ").join("-");
 
-  let content = ContentInfo.find((content) => content.title == title);
+  let content = ContentInfo.find((content) => content.title == contentTitle);
+
+  if (!course) {
+    return (
+      <Layout>
+        <Error404
+          title="Course Not Found"
+          description="The course you are looking for does not exist."
+        />
+      </Layout>
+    );
+  }
 
   if (!content) {
     return (
@@ -21,24 +35,9 @@ export default function Content() {
   }
 
   return (
-    <Layout className="row space-between">
+    <Layout className="">
       <div>
-        <h1>{content.name}</h1>
-        <img src={"/images/" + content.image} alt={content.name} width="800" />
-        <p>{content.description}</p>
-      </div>
-
-      <div>
-        <h2>Are you Ready?</h2>
-        <button
-          className="btn"
-          style={{
-            border: "solid #FFC107",
-            padding: "10px 20px",
-          }}
-        >
-          Start The content
-        </button>
+        <h1>Hello</h1>
       </div>
     </Layout>
   );

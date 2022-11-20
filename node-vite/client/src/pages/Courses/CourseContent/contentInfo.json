@@ -3,8 +3,12 @@
     "id": "Python",
     "videos": [
       {
-        "title": "1-",
-        "link": "https://"
+        "title": "Welcome to Python",
+        "link": "https://www.youtube.com/watch?v=fcxmHzkYDR4"
+      },
+      {
+        "title": "Python Crash Course",
+        "link": "https://www.youtube.com/watch?v=JJmcL1N2KQs"
       }
     ]
   },

@@ -12,6 +12,7 @@ import Roadmap from "./pages/Roadmap/Roadmap";
 import ResultFullstack from "./pages/Roadmap/ResultFullstack";
 import ResultFront from "./pages/Roadmap/ResultFront";
 import ResultBack from "./pages/Roadmap/ResultBack";
+import CourseContent from "./pages/Courses/CourseContent/Content";
 
 //
 import {
@@ -47,19 +48,30 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
+          {/* Main Route */}
           <Route path="/" element={<Login accountInfo={connectedAccount} />} />
+
+          {/* Course */}
           <Route path="/courses" element={<Course />} />
           <Route path="/course/*" element={<CourseDetail />} />
+          <Route path="/course/:course/1" element={<CourseContent />} />
+
+          {/* Roadmaps */}
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/result-fullstack" element={<ResultFullstack />} />
           <Route path="/result-front" element={<ResultFront />} />
-
           <Route path="/result-back" element={<ResultBack />} />
+
+          {/* Authentication */}
           <Route
             path="/signup"
             element={<SignUp accountInfo={connectedAccount} />}
           />
+
+          {/* Home */}
           <Route path="/home" element={<Navigate to="/home" />} />
+
+          {/* Error */}
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

@@ -1,18 +1,12 @@
 import Layout from "../../layouts/layout";
 import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
-
-// let host = "localhost",
-//   user = "root",
-//   password = "",
-//   port = "3306";
-
-// // Use Dolt to create a new database in js
-// let db = new DoltDB("courses", { host, user, password, port });
+import ContentInfo from "./CourseContent/contentInfo.json";
 
 export default function CourseDetail() {
   const id = window.location.pathname.split("/")[2],
-    course = CourseInfo.find((course) => course.id == id);
+    course = CourseInfo.find((course) => course.id == id),
+    content = ContentInfo.find((content) => content.id == id);
 
   if (!course) {
     return (
@@ -26,6 +20,13 @@ export default function CourseDetail() {
   }
 
   // Fucntions
+  // TODO:
+  // - Checks if users is enrolled in the course
+  // - If not, show the enroll button
+  // - If yes, show the start button
+
+  function checkIfEnrolled() {}
+
   function Stack(props) {
     return <></>;
   }
@@ -45,6 +46,11 @@ export default function CourseDetail() {
           style={{
             border: "solid #FFC107",
             padding: "10px 20px",
+          }}
+          onClick={() => {
+            window.location.href = `/course/${
+              course.id
+            }/${content.videos[0].title.split(" ").join("-")}`;
           }}
         >
           Start The Course
