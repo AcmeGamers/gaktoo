@@ -22,8 +22,6 @@ export default function SignUp(props) {
     <Layout className="signup">
       <h1>Sign Up</h1>
       <form
-        action="/api/signup"
-        method="POST"
         className="signup__form"
         onSubmit={(e) => {
           e.preventDefault();

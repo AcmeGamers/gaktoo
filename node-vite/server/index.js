@@ -3,6 +3,8 @@ const express = require("express"),
   app = express(),
   mysql = require("mysql");
 
+app.use(express.json());
+
 var con = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
@@ -28,9 +30,10 @@ app.post("/api/signup", (req, res) => {
 
     console.log("Request is post");
 
-    console.log(req);
     // Get the data from the request
-    const { id, name, username, email, created_at } = req;
+    const { id, name, username, email, created_at } = req.body;
+
+    console.log(id, name, username, email, created_at);
 
     // Insert into SQL gaktooo database
     con.query(
