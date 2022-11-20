@@ -3,7 +3,7 @@ const express = require("express"),
   app = express();
 
 app.get("/api/v1", (req, res) => {
-  res.send("hello !!!!");
+  res.send("API Update");
 });
 
 app.listen(PORT, () => console.log(`start listening on port : ${PORT}`));
