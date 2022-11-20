@@ -1,5 +1,5 @@
 const Header = () => {
-  // 'Sat', 'Nov', '19', '2022'
+  // Output: 'Sat', 'Nov', '19', '2022'
   let date = new Date().toDateString().split(" "),
     suffix = ["st", "nd", "rd", "th"],
     daySuffix = date[2] > 3 ? suffix[3] : suffix[date[2] - 1];
@@ -9,6 +9,19 @@ const Header = () => {
   return (
     <header className="row space-between hr-center">
       <div>{date}</div>
+      <div>
+        <ul className="row">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/courses">Courses</a>
+          </li>
+          <li>
+            <a href="/result-front">Specific</a>
+          </li>
+        </ul>
+      </div>
       <div>
         {/* Bell Icon */}
         <i></i>

@@ -9,6 +9,7 @@ import "./css/styles.css";
 import "./css/predefined-query.css";
 import "./css/styles-query.css";
 import Header from "./components/Header";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Header />

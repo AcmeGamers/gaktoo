@@ -1,4 +1,4 @@
-const Header = () => {
+export default function Header() {
   // 'Sat', 'Nov', '19', '2022'
   let date = new Date().toDateString().split(" "),
     suffix = ["st", "nd", "rd", "th"],
@@ -22,6 +22,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

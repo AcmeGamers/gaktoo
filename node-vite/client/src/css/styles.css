@@ -135,6 +135,15 @@ header {
   color: #000;
 }
 
+header a {
+  color: #000;
+  text-decoration: none;
+}
+header ul > li {
+  list-style-type: none;
+  margin-right: 2rem;
+}
+
 .header__userImage {
   width: 50px;
   height: 50px;
@@ -309,19 +318,18 @@ header {
 ===========
 */
 
-
 /* 
 ===========
 ---- @RoadmapForm
 ===========
 */
 
-.roadmap-desc{
+.roadmap-desc {
   justify-content: center;
   text-align: center;
-  padding-top:5rem;
+  padding-top: 5rem;
 }
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -329,13 +337,11 @@ header {
   background: var(--bg);
   align-items: center;
 }
-label{
-  border:#c6c6c6 2px solid;
+label {
+  border: #c6c6c6 2px solid;
   border-radius: 10px;
-  padding:20px;
+  padding: 20px;
 }
-
-
 
 form input {
   border: 1px solid rgba(179, 179, 179, 0.4);
@@ -343,17 +349,16 @@ form input {
   width: 250px;
   border-radius: 3px;
   font-family: "Source Sans Pro", sans-serif;
-  display:flex;
+  display: flex;
   font-size: 18px;
   color: #fff;
   font-weight: 300;
-
 }
 
-.name-input{
-  display:block;
-  margin:20px 0;
-  color:#3d9edf
+.name-input {
+  display: block;
+  margin: 20px 0;
+  color: #3d9edf;
 }
 /* 
 ===========

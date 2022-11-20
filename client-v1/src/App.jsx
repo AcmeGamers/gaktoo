@@ -20,8 +20,6 @@ import {
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
 
-
-
 export default function App() {
   // States
   const [connectedAccount] = useGlobalState("connectedAccount");
@@ -42,7 +40,7 @@ export default function App() {
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/result-fullstack" element={<ResultFullstack />} />
           <Route path="/result-front" element={<ResultFront />} />
- 
+
           <Route path="/result-back" element={<ResultBack />} />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />

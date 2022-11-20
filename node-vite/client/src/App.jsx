@@ -47,7 +47,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login accountInfo={connectedAccount} />} />
-          <Route path="/course" element={<Course />} />
+          <Route path="/courses" element={<Course />} />
           <Route path="/course/*" element={<CourseDetail />} />
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/result-fullstack" element={<ResultFullstack />} />

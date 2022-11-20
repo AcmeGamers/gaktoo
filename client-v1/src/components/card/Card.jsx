@@ -8,7 +8,7 @@ function Card(props) {
       <dl className="card">
         <div className="top">
           <dt className="title">{props.title}</dt>
-        
+
           <img className="circle-img" src={props.img} alt="avatar_img" />
         </div>
         <div className="bottom">
