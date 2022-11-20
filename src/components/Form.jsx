@@ -1,6 +1,6 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+<<<<<<< HEAD
 function Form() {
 
 
@@ -16,6 +16,10 @@ const submittedValues = false;
 
 
 
+=======
+
+export default function Form() {
+>>>>>>> 947f793246fb415254f83c6850dd31d07ea512b7
   return (
     <div className="form-page wow fadeInUp">
       <form>
@@ -87,5 +91,3 @@ const submittedValues = false;
     </div>
   );
 }
-
-export default Form;
