@@ -26,7 +26,6 @@ import {
   sendMoney,
   getAllTransactions,
   signMessage,
-  plainSignMessage,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
 import SignUp from "./pages/SignUp";

@@ -1,3 +1,34 @@
+## Install Dependencies
+
+### One Liner
+
+For easiness sake, you can use this simple command to install depenedcies at once.
+
+```bash
+cd node-vite
+"'npm install' 'cd ./server && npm install' 'cd ./client && npm install' 'cd ./client/smart_contracts && npm install\'"
+```
+
+### Longer
+
+Copy all and paste it in shell, it will save you time and effort :D
+
+```bash
+cd node-vite
+npm install
+
+cd ./server
+npm install
+
+cd ./client
+npm install
+
+cd ./client/smart_contracts
+npm install
+
+cd ../../
+```
+
 ## Launcher
 
 ```shell
