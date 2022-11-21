@@ -74,11 +74,17 @@ export default function CourseDetail() {
         {/* Comments */}
         <div>
           <h2>Comments</h2>
-          <form action="" id="usrform">
+          <form action="" id="usrform" className="column hr-left">
             <textarea name="comment" form="usrform">
               Enter text here...
             </textarea>
-            <input type="submit" />
+            <input
+              type="submit"
+              className="btn"
+              style={{
+                marginTop: "1rem",
+              }}
+            />
           </form>
         </div>
 
@@ -86,7 +92,7 @@ export default function CourseDetail() {
         <Reviews />
       </div>
 
-      <div>
+      <div style={{ width: "30%" }}>
         <h2>Are you Ready?</h2>
         <Link
           to={`/course/${course.id}/${content.videos[0].title
@@ -96,7 +102,7 @@ export default function CourseDetail() {
           <button
             className="btn"
             style={{
-              border: "solid #FFC107",
+              border: "1px solid #000000",
               padding: "10px 20px",
             }}
           >

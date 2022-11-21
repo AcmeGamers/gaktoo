@@ -164,7 +164,7 @@ header ul > li {
 ============
 */
 .btn {
-  padding: 0px 30px;
+  padding: 10px 30px;
   background: transparent;
   color: var(--bg-main-content);
   border: none;
@@ -347,6 +347,18 @@ header ul > li {
   width: 50%;
 }
 
+#usrform > textarea {
+  width: 60%;
+  height: 10rem;
+  font-size: inherit;
+  padding: 1rem;
+  font-family: inherit;
+}
+#usrform > input[type="submit"] {
+  color: #000;
+  border: 1px solid #000;
+}
+
 /* 
 ==================
 ---- @Content Page
@@ -414,13 +426,14 @@ header ul > li {
   background: var(--bg);
   align-items: center;
 }
+
 label {
   border: #c6c6c6 2px solid;
   border-radius: 10px;
   padding: 20px;
 }
 
-form input {
+.form-page form input {
   border: 1px solid rgba(179, 179, 179, 0.4);
   background-color: rgba(203, 221, 249, 0.2);
   width: 250px;

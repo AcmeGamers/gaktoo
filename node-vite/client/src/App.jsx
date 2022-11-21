@@ -22,8 +22,6 @@ import {
   isWallectConnected,
   checkIfTransactionExist,
   connectWallet,
-  getEtheriumContract,
-  sendMoney,
   getAllTransactions,
   signMessage,
 } from "./shared/transaction";
@@ -80,13 +78,8 @@ export default function App() {
         {/* Error */}
         <Route path="*" element={<Error404 />} />
       </Routes>
-      <button
-        onClick={() => {
-          signMessage();
-        }}
-      >
-        Access server using proxy
-      </button>
     </div>
   );
 }
+
+// <button onClick={() => { signMessage("Update"); }}> Access server using proxy </button>
