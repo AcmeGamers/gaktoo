@@ -18,11 +18,12 @@ npm install
 
 cd ./server
 npm install
+cd ..
 
 cd ./client
 npm install
 
-cd ./client/smart_contracts
+cd ./client/smart_contract
 npm install
 
 cd ../../
