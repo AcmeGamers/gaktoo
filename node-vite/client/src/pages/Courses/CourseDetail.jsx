@@ -123,13 +123,6 @@ export default function CourseDetail(props) {
           </button>
         </Link>
       </div>
-      <button
-        onClick={() => {
-          props.signMessage("Update");
-        }}
-      >
-        Access server using proxy
-      </button>
     </Layout>
   );
 }

@@ -31,7 +31,7 @@ import SignUp from "./pages/SignUp";
 
 export default function App() {
   // States
-  const [connectedAccount] = useGlobalState("connectedAccount"),
+  const [connectedAccount, transactions] = useGlobalState("connectedAccount"),
     [data, setData] = useState();
 
   // Functions
@@ -115,6 +115,8 @@ export default function App() {
         {" "}
         Access server using proxy{" "}
       </button>
+      {console.log("transactions")}
+      {console.log(transactions)}
     </div>
   );
 }

@@ -1,0 +1,6 @@
+select * from gaktoo.Users where id = "0x78ef399069f84403434aba9e98056279ba6be05e" ;
+DELETE FROM gaktoo.Users WHERE username = "acmegamer";
+ALTER TABLE gaktoo.Users ADD UNIQUE (id);
+use gaktoo;
+ CREATE TABLE Reviews (     id VARCHAR(255) NOT NULL,     F_Name VARCHAR(255) NOT NULL,     username VARCHAR(255) NOT NULL,     created_at VARCHAR(255) NOT NULL,     comment VARCHAR(255) NOT NULL,     review VARCHAR(255) NOT NULL,      UNIQUE (id) );
+ ALTER TABLE gaktoo.Reviews ADD UNIQUE (id);
