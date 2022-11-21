@@ -83,7 +83,7 @@ export default function App() {
       </Routes>
       <button
         onClick={() => {
-          plainSignMessage();
+          signMessage();
         }}
       >
         Access server using proxy

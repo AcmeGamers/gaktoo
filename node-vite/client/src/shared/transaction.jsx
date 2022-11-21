@@ -75,15 +75,13 @@ const getAllTransactions = async () => {
   }
 };
 
-const signMessage = async (account, message) => {
+const signMessage = async (message) => {
   try {
-    if (!ethereum) console.log("Please install Metamask");
     const transactionContract = getEtheriumContract();
-    const transactions = await transactionContract.signMessage(message);
-    setGlobalState("transactions", transactions);
-  } catch (error) {
-    console.log(error);
-    throw new Error("No ethereum object.");
+    messageBytes = ethers.utils.arrayify(message);
+    signature = await transactionContract.signer.signMessage(messageBytes);
+  } catch (e) {
+    console.log(e);
   }
 };
 
@@ -100,16 +98,6 @@ const getTransactionCount = async () => {
   }
 };
 
-const plainSignMessage = async (message) => {
-  try {
-    const transactionContract = getEtheriumContract();
-    messageBytes = ethers.utils.arrayify(message);
-    signature = await transactionContract.signer.signMessage(messageBytes);
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 export {
   getEtheriumContract,
   isWallectConnected,
@@ -118,5 +106,4 @@ export {
   sendMoney,
   getAllTransactions,
   signMessage,
-  plainSignMessage,
 };
