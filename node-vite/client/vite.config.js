@@ -9,6 +9,7 @@ export default defineConfig({
       "/api/user": "http://localhost:5000/",
       "/api/comment": "http://localhost:5000/",
       "/api/fetch-comment": "http://localhost:5000/",
+      "/api/get-all-users": "http://localhost:5000/",
     },
   },
   plugins: [react()],

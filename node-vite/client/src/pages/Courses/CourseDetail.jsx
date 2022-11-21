@@ -3,7 +3,7 @@ import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
 import ContentInfo from "./CourseContent/contentInfo.json";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
 export default function CourseDetail(props) {
@@ -11,7 +11,8 @@ export default function CourseDetail(props) {
     course = CourseInfo.find((course) => course.id == id),
     content = ContentInfo.find((content) => content.id == id),
     comment = useRef(),
-    [reviews, setReviews] = useState(5);
+    [reviews, setReviews] = useState(5),
+    [comments, setComments] = useState([]);
 
   if (!course) {
     return (
@@ -40,39 +41,75 @@ export default function CourseDetail(props) {
     // console.log(data);
   }
 
+  // Retrieve comments from server
+  useEffect(() => {
+    axios
+      .post("/api/fetch-comment", {
+        id: id,
+      })
+      .then((res) => {
+        setComments(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   function checkIfEnrolled() {}
 
   function Reviews(props) {
+    function Comment(props) {
+      return (
+        <div className="row hr-center" style={{ marginBottom: "2rem" }}>
+          {/* User Image */}
+          <div>
+            <div
+              style={{
+                backgroundImage: `url(${props.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+              }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="course_detail__reviews_content">
+            <div className="row hr-center">
+              <h3>{props.name || "John Doe"}</h3>
+              <span className="course_detail__reviews_content_date">
+                {props.date || "12/12/2021"}
+              </span>
+              <span className="course_detail__reviews_content_rating">
+                ({props.rating || 5})
+              </span>
+            </div>
+            <p>
+              {props.description ||
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, quod, quia, voluptatibus quae voluptatem quibusdam quidem quos natus quas. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae."}
+            </p>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="course_detail__reviews">
         <h2>Reviews</h2>
-        <div className="row hr-center">
-          <div className="row hr-center">
-            {/* User Image */}
-            <div>
-              <div
-                style={{
-                  backgroundImage: `url(${props.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  background: "red",
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "50%",
-                }}
+        <div className="column ">
+          {comments.map((comment, index) => {
+            return (
+              <Comment
+                image={props.image}
+                name={comment.F_Name}
+                description={comment.comment}
+                date={comment.created_at.split(",")[0]}
+                key={index}
               />
-            </div>
-
-            {/* Content */}
-            <div className="course_detail__reviews_content">
-              <h3>{props.name || "John Doe"}</h3>
-              <p>
-                {props.description ||
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, quod, quia, voluptatibus quae voluptatem quibusdam quidem quos natus quas. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae."}
-              </p>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -212,7 +249,7 @@ export default function CourseDetail(props) {
         </div>
 
         {/* Reviews */}
-        <Reviews />
+        <Reviews image={"/images/users/user.webp"} />
       </div>
       <div style={{ width: "30%" }}>
         <h2>Are you Ready?</h2>

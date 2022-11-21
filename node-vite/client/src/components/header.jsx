@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = (props) => {
   // Output: 'Sat', 'Nov', '19', '2022'
@@ -8,6 +9,7 @@ const Header = (props) => {
 
   date = date[2] + daySuffix + " " + date[1] + "," + " " + date[3];
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header className="row space-between hr-center">
       <div>{date}</div>
@@ -33,7 +35,12 @@ const Header = (props) => {
             alt="bell"
           />
           {/* Seperator */}
-          <div className="row hr-center vr-center avatar">
+          <div
+            className="row hr-center vr-center avatar"
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen);
+            }}
+          >
             {/* Image */}
             <div className="header__userImage"></div>
             {/* Name */}
@@ -47,28 +54,41 @@ const Header = (props) => {
                 alt="chevron-down"
               ></img>
             </div>
+
             {/* Options */}
-            <ul className="header__options">
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li>
-                <Link to="/settings">Settings</Link>
-              </li>
-              <li
-                onClick={() => {
-                  props.disconnectWallet();
-                }}
-              >
-                Logout
-              </li>
-            </ul>
+            {isMenuOpen && (
+              <ul className="header__options">
+                <li>
+                  <Link to="/profile">Profile</Link>
+                </li>
+                <li>
+                  <Link to="/settings">Settings</Link>
+                </li>
+                <li
+                  onClick={() => {
+                    props.disconnectWallet();
+                  }}
+                >
+                  Logout
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       ) : (
-        <button className="btn active" onClick={props.connectWallet}>
-          Connect Wallet
-        </button>
+        <div>
+          <button
+            className="btn"
+            style={{
+              marginRight: "1rem",
+            }}
+          >
+            <Link to="/signup">Sign Up</Link>
+          </button>
+          <button className="btn active" onClick={props.connectWallet}>
+            Connect Wallet
+          </button>
+        </div>
       )}
     </header>
   );

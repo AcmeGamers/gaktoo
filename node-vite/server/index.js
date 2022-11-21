@@ -36,7 +36,7 @@ app.post("/api/user", (req, res) => {
 app.post("/api/fetch-comment", (req, res) => {
   const { id } = req.body;
   con.query(
-    `SELECT * FROM gaktoo.reviews WHERE id = "${id}"`,
+    `SELECT * FROM gaktoo.reviews WHERE course = "${id}"`,
     function (err, result) {
       if (err) throw err;
       res.send(result);
@@ -74,6 +74,31 @@ app.post("/api/comment", (req, res) => {
 });
 
 app.post("/api/signup", (req, res) => {
+  console.log("Request received");
+
+  // Check if request is post
+  if (req.method === "POST") {
+    res.send("Request received");
+
+    console.log("Request is post");
+
+    // Get the data from the request
+    const { id, name, username, email, created_at } = req.body;
+
+    console.log(id, name, username, email, created_at);
+
+    // Insert into SQL gaktooo database
+    con.query(
+      `INSERT INTO gaktoo.Users (id, F_Name, username, email, created_at) VALUES ('${id}', '${name}', '${username}', '${email}', '${created_at}')`,
+      function (err, result) {
+        if (err) throw err;
+        console.log("1 record inserted");
+      }
+    );
+  } else console.log("Not a post request");
+});
+
+app.post("/api/get-all-users", (req, res) => {
   console.log("Request received");
 
   // Check if request is post

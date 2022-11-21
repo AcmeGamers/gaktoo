@@ -104,7 +104,7 @@ export default function App() {
         {/* Authentication */}
         <Route
           path="/signup"
-          element={<SignUp accountInfo={connectedAccount} />}
+          element={<SignUp accountInfo={connectedAccount} data={data} />}
         />
 
         {/* Home */}
