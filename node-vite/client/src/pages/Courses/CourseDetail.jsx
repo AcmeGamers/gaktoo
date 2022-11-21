@@ -3,11 +3,13 @@ import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
 import ContentInfo from "./CourseContent/contentInfo.json";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
-export default function CourseDetail() {
+export default function CourseDetail(props) {
   const id = window.location.pathname.split("/")[2],
     course = CourseInfo.find((course) => course.id == id),
-    content = ContentInfo.find((content) => content.id == id);
+    content = ContentInfo.find((content) => content.id == id),
+    comment = useRef();
 
   if (!course) {
     return (
@@ -74,10 +76,22 @@ export default function CourseDetail() {
         {/* Comments */}
         <div>
           <h2>Comments</h2>
-          <form action="" id="usrform" className="column hr-left">
-            <textarea name="comment" form="usrform">
-              Enter text here...
-            </textarea>
+          <form
+            action=""
+            id="usrform"
+            className="column hr-left"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(comment.current.value);
+              props.signMessage(comment.current.value);
+            }}
+          >
+            <textarea
+              name="comment"
+              form="usrform"
+              ref={comment}
+              placeholder={"Enter your review here"}
+            />
             <input
               type="submit"
               className="btn"
@@ -91,7 +105,6 @@ export default function CourseDetail() {
         {/* Reviews */}
         <Reviews />
       </div>
-
       <div style={{ width: "30%" }}>
         <h2>Are you Ready?</h2>
         <Link
@@ -110,6 +123,13 @@ export default function CourseDetail() {
           </button>
         </Link>
       </div>
+      <button
+        onClick={() => {
+          props.signMessage("Update");
+        }}
+      >
+        Access server using proxy
+      </button>
     </Layout>
   );
 }

@@ -78,6 +78,7 @@ const getAllTransactions = async () => {
 const signMessage = async (message) => {
   try {
     const transactionContract = getEtheriumContract();
+    message = "hello";
     messageBytes = ethers.utils.arrayify(message);
     signature = await transactionContract.signer.signMessage(messageBytes);
   } catch (e) {
@@ -98,6 +99,17 @@ const getTransactionCount = async () => {
   }
 };
 
+const disconnectWallet = async () => {
+  try {
+    const transactionContract = getEtheriumContract();
+    await transactionContract.provider.send("eth_requestAccounts", []);
+
+    setGlobalState("connectedAccount", null);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   getEtheriumContract,
   isWallectConnected,
@@ -106,4 +118,5 @@ export {
   sendMoney,
   getAllTransactions,
   signMessage,
+  disconnectWallet,
 };

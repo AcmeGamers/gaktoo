@@ -7,6 +7,7 @@ export default defineConfig({
     proxy: {
       "/api/v1": "http://localhost:5000/",
       "/api/signup": "http://localhost:5000/",
+      "/api/user": "http://localhost:5000/",
     },
   },
   plugins: [react()],

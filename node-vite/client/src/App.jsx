@@ -24,6 +24,7 @@ import {
   connectWallet,
   getAllTransactions,
   signMessage,
+  disconnectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
 import SignUp from "./pages/SignUp";
@@ -31,8 +32,28 @@ import SignUp from "./pages/SignUp";
 export default function App() {
   // States
   const [connectedAccount] = useGlobalState("connectedAccount"),
-    [data, setData] = useState(),
-    urlWithProxy = "/api/signup";
+    [data, setData] = useState();
+
+  // Functions
+  function requestData() {
+    console.log(connectedAccount);
+    axios
+      .post("/api/user", {
+        id: connectedAccount,
+      })
+      .then((res) => {
+        console.log("test update");
+        console.log(res.data[0]);
+        setData(res.data[0]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    // return data from server
+
+    return;
+  }
 
   // Readers
   useEffect(() => {
@@ -40,25 +61,33 @@ export default function App() {
     checkIfTransactionExist();
   }, []);
 
-  function getDataFromServer() {
-    axios
-      .get(urlWithProxy)
-      .then((res) => setData(res.data))
-      .catch((err) => {
-        console.error(err);
-      });
-  }
+  useEffect(() => {
+    requestData();
+  }, [connectedAccount]);
 
   return (
     <div>
+      <Header
+        data={data}
+        connectWallet={connectWallet}
+        disconnectWallet={disconnectWallet}
+        connectedAccount={connectedAccount}
+      />
+
       <Routes>
         {/* Main Route */}
         <Route path="/" element={<Login accountInfo={connectedAccount} />} />
 
         {/* Course */}
         <Route path="/courses" element={<Course />} />
-        <Route path="/course/*" element={<CourseDetail />}></Route>
-        <Route path="/course/:course/:content" element={<CourseContent />} />
+        <Route
+          path="/course/*"
+          element={<CourseDetail signMessage={signMessage} />}
+        ></Route>
+        <Route
+          path="/course/:course/:content"
+          element={<CourseContent signMessage={signMessage} />}
+        />
 
         {/* Roadmaps */}
         <Route path="/roadmap" element={<Roadmap />} />
@@ -78,8 +107,18 @@ export default function App() {
         {/* Error */}
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <button
+        onClick={() => {
+          signMessage("Update");
+        }}
+      >
+        {" "}
+        Access server using proxy{" "}
+      </button>
     </div>
   );
 }
 
-// <button onClick={() => { signMessage("Update"); }}> Access server using proxy </button>
+{
+  /* <button onClick={() => { signMessage("Update"); }}> Access server using proxy </button> */
+}

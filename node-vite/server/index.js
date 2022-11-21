@@ -21,6 +21,18 @@ app.get("/api/v1", (req, res) => {
   res.send("API Update");
 });
 
+app.post("/api/user", (req, res) => {
+  const { id } = req.body;
+  console.log(id);
+  con.query(
+    `SELECT * FROM gaktoo.Users WHERE id = "${id}"`,
+    function (err, result) {
+      if (err) throw err;
+      res.send(result);
+    }
+  );
+});
+
 app.post("/api/signup", (req, res) => {
   console.log("Request received");
 

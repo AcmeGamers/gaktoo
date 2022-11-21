@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   // Output: 'Sat', 'Nov', '19', '2022'
   let date = new Date().toDateString().split(" "),
     suffix = ["st", "nd", "rd", "th"],
@@ -24,17 +24,52 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div>
-        {/* Bell Icon */}
-        <i></i>
-        {/* Seperator */}
-        <div className="row hr-center vr-center">
-          <div className="header__userImage"></div>
-          <div className="">
-            Ley Hanamura <i className="chevron-down"></i>
+      {props.connectedAccount ? (
+        <div className="row hr-center">
+          {/* Bell Icon */}
+          <img
+            src="/images/icons/bell.svg"
+            className="header__bell_icon"
+            alt="bell"
+          />
+          {/* Seperator */}
+          <div className="row hr-center vr-center avatar">
+            {/* Image */}
+            <div className="header__userImage"></div>
+            {/* Name */}
+            <div className="row">
+              {props.data?.F_Name || ""}{" "}
+              <img
+                src="/images/icons/chevron-down.svg"
+                style={{
+                  marginLeft: "0.5rem",
+                }}
+                alt="chevron-down"
+              ></img>
+            </div>
+            {/* Options */}
+            <ul className="header__options">
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="/settings">Settings</Link>
+              </li>
+              <li
+                onClick={() => {
+                  props.disconnectWallet();
+                }}
+              >
+                Logout
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      ) : (
+        <button className="btn active" onClick={props.connectWallet}>
+          Connect Wallet
+        </button>
+      )}
     </header>
   );
 };

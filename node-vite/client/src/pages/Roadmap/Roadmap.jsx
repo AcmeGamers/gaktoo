@@ -8,8 +8,8 @@ const Roadmap = () => {
         <h1 class>Roadmap</h1>
 
         <h2 className="wow bounce">
-          Answer just 3 questions - Get customized roadmap and start talking with
-          mentors!
+          Answer just 3 questions - Get customized roadmap and start talking
+          with mentors!
         </h2>
       </div>
       <Form />
