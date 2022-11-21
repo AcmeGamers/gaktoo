@@ -28,7 +28,7 @@ export default function CourseDetail() {
 
   function checkIfEnrolled() {}
 
-  function User(props) {
+  function Reviews(props) {
     return (
       <div className="course_detail__reviews">
         <h2>Reviews</h2>
@@ -71,7 +71,19 @@ export default function CourseDetail() {
         <img src={"/images/" + course.image} alt={course.name} width="800" />
         <p>{course.description}</p>
 
-        <User></User>
+        {/* Comments */}
+        <div>
+          <h2>Comments</h2>
+          <form action="" id="usrform">
+            <textarea name="comment" form="usrform">
+              Enter text here...
+            </textarea>
+            <input type="submit" />
+          </form>
+        </div>
+
+        {/* Reviews */}
+        <Reviews />
       </div>
 
       <div>
