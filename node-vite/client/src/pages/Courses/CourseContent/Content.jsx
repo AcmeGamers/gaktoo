@@ -13,7 +13,7 @@ export default function CourseContent() {
   const content = ContentInfo.find((content) => content.id == courseID).videos;
 
   // Matches URL with video title
-  const video = content.find((video) => video.title == contentTitle);
+  const contentVideo = content.find((video) => video.title == contentTitle);
 
   if (!course) {
     return (
@@ -38,32 +38,50 @@ export default function CourseContent() {
   // }
 
   return (
-    <Layout className="content row space-between">
+    <Layout className="content_page row space-between">
       {/* Left Hand Side */}
-      <div>
-        <h1>{video.title}</h1>
+      <div className="content_page__video">
+        <h1>{contentVideo.title}</h1>
         <iframe
           width="560"
           height="315"
-          src={`https://www.youtube.com/embed/${video.url}`}
+          src={`https://www.youtube.com/embed/${contentVideo.url}`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
         ></iframe>
+        <h2>Reviews</h2>
+
+        {/* Stars */}
+
+        {/* User */}
+        <div>
+          <div>Image</div>
+          <div>
+            <h3>John Doe</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptates, quod, quia, voluptatibus quae voluptatem quibusdam
+              voluptatum quidem quos natus quas. Quisquam, quae. Quisquam, quae.
+              Quisquam, quae. Quisquam, quae.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Right Hand Side */}
-      <div>
+      <div className="content_page__contents">
         <h2>Course Content</h2>
         <ul>
-          {content.map((video) => (
-            <li>
-              <Link
+          {content.map((video, index) => (
+            <li key={index}>
+              <a
                 href={`/course/${courseID}/${video.title.split(" ").join("-")}`}
+                key={index}
               >
                 {video.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

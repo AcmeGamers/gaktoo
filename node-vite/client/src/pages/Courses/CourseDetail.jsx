@@ -38,6 +38,23 @@ export default function CourseDetail() {
         <h1>{course.name}</h1>
         <img src={"/images/" + course.image} alt={course.name} width="800" />
         <p>{course.description}</p>
+
+        {/* User */}
+        <div className="course_detail__reviews">
+          <h2>Reviews</h2>
+          <div>
+            <div>Image</div>
+            <div>
+              <h3>John Doe</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptates, quod, quia, voluptatibus quae voluptatem
+                quibusdam voluptatum quidem quos natus quas. Quisquam, quae.
+                Quisquam, quae. Quisquam, quae. Quisquam, quae.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>

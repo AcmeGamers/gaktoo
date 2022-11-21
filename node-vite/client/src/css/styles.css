@@ -339,6 +339,40 @@ header ul > li {
   margin: 0.5rem 0;
 }
 
+.course_detail__reviews {
+  margin-top: 5rem;
+}
+
+/* 
+==================
+---- @Content Page
+==================
+*/
+
+.content_page__video {
+  width: 70%;
+}
+.content_page__contents {
+  width: 30%;
+}
+
+.content_page ul {
+  padding: 0;
+}
+.content_page li {
+  list-style-type: none;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-bottom: 0;
+}
+.content_page li:last-child {
+  border-bottom: 1px solid #000;
+}
+.content_page a {
+  color: #000;
+  text-decoration: none;
+}
+
 /* 
 =============
 ---- @Profile
