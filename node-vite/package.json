@@ -4,6 +4,7 @@
   },
   "scripts": {
     "dev": "cd ./client && npm run dev",
-    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\""
+    "server": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\"",
+    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\" \"dolt sql-server\""
   }
 }
