@@ -5,8 +5,7 @@
 For easiness sake, you can use this simple command to install depenedcies at once.
 
 ```bash
-cd node-vite
-"'npm install' 'cd ./server && npm install' 'cd ./client && npm install' 'cd ./client/smart_contracts && npm install\'"
+"cd node-vite && npm install && cd ./server && npm install && cd ../ && cd ./client && npm install && cd smart_contract && npm install"
 ```
 
 ### Longer

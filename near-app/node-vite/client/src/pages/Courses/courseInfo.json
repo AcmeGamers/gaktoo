@@ -1,0 +1,77 @@
+[
+  {
+    "id": "Python",
+    "image": "python.png",
+    "thumbnail": "python.png",
+    "name": "Learning Python Stack",
+    "description": "Get aware of the near-human level language and develop applications at a super fast rate.",
+    "tags": [
+      {
+        "icon": "audience",
+        "text": "119"
+      },
+      {
+        "icon": "dev",
+        "text": "Website Development"
+      },
+      {
+        "icon": "audience",
+        "text": "Software Development"
+      }
+    ],
+    "requirements": [
+      "PC / Mobile Device",
+      "Online / Offline Learning Interface"
+    ]
+  },
+  {
+    "id": "JavaScript",
+    "image": "javascript.jpeg",
+    "thumbnail": "javascript.jpeg",
+    "name": "JavaScript Stack",
+    "description": "Get aware of the near-human level language and develop applications at a super fast rate.",
+    "tags": [
+      {
+        "icon": "audience",
+        "text": "119"
+      },
+      {
+        "icon": "dev",
+        "text": "Website Development"
+      },
+      {
+        "icon": "audience",
+        "text": "Software Development"
+      }
+    ],
+    "requirements": [
+      "PC / Mobile Device",
+      "Online / Offline Learning Interface"
+    ]
+  },
+  {
+    "id": "Dart-Flutter",
+    "image": "flutter.jpg",
+    "thumbnail": "flutter-2.png",
+    "name": "Dart (+ Flutter) Stack",
+    "description": "Get aware of the near-human level language and develop applications at a super fast rate.",
+    "tags": [
+      {
+        "icon": "audience",
+        "text": "119"
+      },
+      {
+        "icon": "dev",
+        "text": "Website Development"
+      },
+      {
+        "icon": "audience",
+        "text": "Software Development"
+      }
+    ],
+    "requirements": [
+      "PC / Mobile Device",
+      "Online / Offline Learning Interface"
+    ]
+  }
+]
