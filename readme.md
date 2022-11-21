@@ -2,7 +2,15 @@
 
 ```shell
 cd node-vite
+
+# Starts only frontend
 yarn dev
+
+# Starts frontend + server
+yarn server
+
+# Starts frontend + server + SQL
+yarn start
 ```
 
 ## SQL Server
