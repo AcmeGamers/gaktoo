@@ -293,6 +293,13 @@ header ul > li {
   margin-left: 3rem;
   width: 60%;
 }
+.course_page__card_content > a > h2 {
+  color: #000;
+  transition: 0.5s ease color;
+}
+.course_page__card_content > a > h2:hover {
+  color: #5063f3;
+}
 .course_page__card_content_info > p {
   line-height: 2;
 }
@@ -351,9 +358,9 @@ header ul > li {
 */
 
 /* 
-===========
+=================
 ---- @RoadmapForm
-===========
+=================
 */
 
 .roadmap-desc {

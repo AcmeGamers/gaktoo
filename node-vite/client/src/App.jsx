@@ -1,8 +1,11 @@
+// Modules
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-//
+// Components
+import Header from "./components/Header";
+
 import Course from "./pages/Course";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -14,7 +17,7 @@ import ResultFront from "./pages/Roadmap/ResultFront";
 import ResultBack from "./pages/Roadmap/ResultBack";
 import CourseContent from "./pages/Courses/CourseContent/Content";
 
-//
+// Wallet
 import {
   isWallectConnected,
   checkIfTransactionExist,
@@ -46,35 +49,33 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          {/* Main Route */}
-          <Route path="/" element={<Login accountInfo={connectedAccount} />} />
+      <Routes>
+        {/* Main Route */}
+        <Route path="/" element={<Login accountInfo={connectedAccount} />} />
 
-          {/* Course */}
-          <Route path="/courses" element={<Course />} />
-          <Route path="/course/*" element={<CourseDetail />}></Route>
-          <Route path="/course/:course/:content" element={<CourseContent />} />
+        {/* Course */}
+        <Route path="/courses" element={<Course />} />
+        <Route path="/course/*" element={<CourseDetail />}></Route>
+        <Route path="/course/:course/:content" element={<CourseContent />} />
 
-          {/* Roadmaps */}
-          <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/result-fullstack" element={<ResultFullstack />} />
-          <Route path="/result-front" element={<ResultFront />} />
-          <Route path="/result-back" element={<ResultBack />} />
+        {/* Roadmaps */}
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/result-fullstack" element={<ResultFullstack />} />
+        <Route path="/result-front" element={<ResultFront />} />
+        <Route path="/result-back" element={<ResultBack />} />
 
-          {/* Authentication */}
-          <Route
-            path="/signup"
-            element={<SignUp accountInfo={connectedAccount} />}
-          />
+        {/* Authentication */}
+        <Route
+          path="/signup"
+          element={<SignUp accountInfo={connectedAccount} />}
+        />
 
-          {/* Home */}
-          <Route path="/home" element={<Navigate to="/home" />} />
+        {/* Home */}
+        <Route path="/home" element={<Navigate to="/home" />} />
 
-          {/* Error */}
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-      </BrowserRouter>
+        {/* Error */}
+        <Route path="*" element={<Error404 />} />
+      </Routes>
       {/* 
       <button onClick={getDataFromServer}>Access server using proxy</button>
       <p>data : {data}</p>

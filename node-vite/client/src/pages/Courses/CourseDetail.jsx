@@ -2,6 +2,7 @@ import Layout from "../../layouts/layout";
 import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
 import ContentInfo from "./CourseContent/contentInfo.json";
+import { Link } from "react-router-dom";
 
 export default function CourseDetail() {
   const id = window.location.pathname.split("/")[2],
@@ -41,20 +42,21 @@ export default function CourseDetail() {
 
       <div>
         <h2>Are you Ready?</h2>
-        <button
-          className="btn"
-          style={{
-            border: "solid #FFC107",
-            padding: "10px 20px",
-          }}
-          onClick={() => {
-            window.location.href = `/course/${
-              course.id
-            }/${content.videos[0].title.split(" ").join("-")}`;
-          }}
+        <Link
+          to={`/course/${course.id}/${content.videos[0].title
+            .split(" ")
+            .join("-")}`}
         >
-          Start The Course
-        </button>
+          <button
+            className="btn"
+            style={{
+              border: "solid #FFC107",
+              padding: "10px 20px",
+            }}
+          >
+            Start The Course
+          </button>
+        </Link>
       </div>
     </Layout>
   );

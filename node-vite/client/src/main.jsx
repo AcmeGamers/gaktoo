@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 // Style Files
@@ -13,7 +14,9 @@ import Header from "./components/Header";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Header />
-    <App />
+    <BrowserRouter>
+      <Header />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

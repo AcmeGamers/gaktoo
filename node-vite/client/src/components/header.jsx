@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   // Output: 'Sat', 'Nov', '19', '2022'
   let date = new Date().toDateString().split(" "),
@@ -12,13 +14,13 @@ const Header = () => {
       <div>
         <ul className="row">
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/courses">Courses</a>
+            <Link to="/courses">Courses</Link>
           </li>
           <li>
-            <a href="/result-front">Specific</a>
+            <Link to="/result-front">Specific</Link>
           </li>
         </ul>
       </div>

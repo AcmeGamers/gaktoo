@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 
 import CourseInfo from "./Courses/courseInfo.json";
 import Layout from "../layouts/layout";
+import { Link } from "react-router-dom";
 
 function Card(props) {
   // List of category type elements
@@ -26,12 +27,7 @@ function Card(props) {
 
   // Main return
   return (
-    <div
-      className="course_page__card row"
-      onClick={() => {
-        window.location.href = "/course/" + props.id;
-      }}
-    >
+    <div className="course_page__card row">
       {/* Image */}
       <div
         className="course_page__card_image"
@@ -45,7 +41,10 @@ function Card(props) {
       ></div>
       {/* Content */}
       <div className="course_page__card_content">
-        <h2>{props.name || "Learning Python Stack"} </h2>
+        <Link to={`/course/${props.id}`}>
+          <h2>{props.name || "Learning Python Stack"} </h2>
+        </Link>
+
         {/*  */}
         <div className="course_page__card_content_category row flex-wrap">
           {props.tags.map((tag, index) => (
