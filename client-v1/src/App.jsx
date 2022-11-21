@@ -40,11 +40,7 @@ export default function App() {
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/result-fullstack" element={<ResultFullstack />} />
           <Route path="/result-front" element={<ResultFront />} />
-<<<<<<< HEAD:src/App.jsx
           <Route path="/form" element={<Form />} />
-=======
-
->>>>>>> 93ebb0aab71ba9d2f53cfb0305e8da98bf0346d2:client-v1/src/App.jsx
           <Route path="/result-back" element={<ResultBack />} />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />
