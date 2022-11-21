@@ -11,7 +11,7 @@ import Roadmap from "./pages/Roadmap/Roadmap";
 import ResultFullstack from "./pages/Roadmap/ResultFullstack";
 import ResultFront from "./pages/Roadmap/ResultFront";
 import ResultBack from "./pages/Roadmap/ResultBack";
-
+import Form from "./pages/Roadmap/Form";
 //
 import {
   isWallectConnected,
@@ -40,7 +40,7 @@ export default function App() {
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/result-fullstack" element={<ResultFullstack />} />
           <Route path="/result-front" element={<ResultFront />} />
-
+          <Route path="/form" element={<Form />} />
           <Route path="/result-back" element={<ResultBack />} />
           <Route path="/home" element={<Navigate to="/home" />} />
           <Route path="*" element={<Error404 />} />
