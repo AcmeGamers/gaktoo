@@ -28,8 +28,40 @@ export default function CourseDetail() {
 
   function checkIfEnrolled() {}
 
-  function Stack(props) {
-    return <></>;
+  function User(props) {
+    return (
+      <div className="course_detail__reviews">
+        <h2>Reviews</h2>
+        <div className="row hr-center">
+          <div className="row hr-center">
+            {/* User Image */}
+            <div>
+              <div
+                style={{
+                  backgroundImage: `url(${props.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  background: "red",
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "50%",
+                }}
+              />
+            </div>
+
+            {/* Content */}
+            <div className="course_detail__reviews_content">
+              <h3>{props.name || "John Doe"}</h3>
+              <p>
+                {props.description ||
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates, quod, quia, voluptatibus quae voluptatem quibusdam quidem quos natus quas. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -39,22 +71,7 @@ export default function CourseDetail() {
         <img src={"/images/" + course.image} alt={course.name} width="800" />
         <p>{course.description}</p>
 
-        {/* User */}
-        <div className="course_detail__reviews">
-          <h2>Reviews</h2>
-          <div>
-            <div>Image</div>
-            <div>
-              <h3>John Doe</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam voluptates, quod, quia, voluptatibus quae voluptatem
-                quibusdam voluptatum quidem quos natus quas. Quisquam, quae.
-                Quisquam, quae. Quisquam, quae. Quisquam, quae.
-              </p>
-            </div>
-          </div>
-        </div>
+        <User></User>
       </div>
 
       <div>

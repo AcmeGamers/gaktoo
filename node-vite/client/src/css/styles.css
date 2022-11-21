@@ -342,6 +342,10 @@ header ul > li {
 .course_detail__reviews {
   margin-top: 5rem;
 }
+.course_detail__reviews_content {
+  margin-left: 2rem;
+  width: 50%;
+}
 
 /* 
 ==================
