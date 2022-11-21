@@ -82,7 +82,13 @@ export default function App() {
         <Route path="/courses" element={<Course />} />
         <Route
           path="/course/*"
-          element={<CourseDetail signMessage={signMessage} />}
+          element={
+            <CourseDetail
+              signMessage={signMessage}
+              data={data}
+              accountInfo={connectedAccount}
+            />
+          }
         ></Route>
         <Route
           path="/course/:course/:content"
@@ -107,20 +113,7 @@ export default function App() {
         {/* Error */}
         <Route path="*" element={<Error404 />} />
       </Routes>
-      <button
-        onClick={() => {
-          signMessage("Update");
-        }}
-      >
-        {" "}
-        Access server using proxy{" "}
-      </button>
-      {console.log("transactions")}
-      {console.log(transactions)}
     </div>
   );
 }
-
-{
-  /* <button onClick={() => { signMessage("Update"); }}> Access server using proxy </button> */
-}
+//  <button onClick={() => { signMessage("Update"); }}> Access server using proxy </button>

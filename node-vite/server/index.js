@@ -33,6 +33,46 @@ app.post("/api/user", (req, res) => {
   );
 });
 
+app.post("/api/fetch-comment", (req, res) => {
+  const { id } = req.body;
+  con.query(
+    `SELECT * FROM gaktoo.reviews WHERE id = "${id}"`,
+    function (err, result) {
+      if (err) throw err;
+      res.send(result);
+    }
+  );
+});
+
+app.post("/api/comment", (req, res) => {
+  // Check if request is post
+  if (req.method === "POST") {
+    res.send("Request received");
+
+    console.log("Request is post");
+
+    // Get the data from the request
+    const { id, F_Name, username, course, created_at, comment, review } =
+      req.body;
+
+    console.log(id, F_Name, username, course, created_at, comment, review);
+
+    let id2 = Math.random() * 8129048291041232;
+
+    try {
+      con.query(
+        `INSERT INTO gaktoo.Reviews (id, id2, F_Name, username, course, created_at, comment, review) VALUES ('${id}', ${id2}, '${F_Name}', '${username}', '${course}', '${created_at}', '${comment}', '${review}')`,
+        function (err, result) {
+          if (err) throw err;
+          console.log("1 record inserted");
+        }
+      );
+    } catch (err) {
+      throw err;
+    }
+  } else console.log("Not a post request");
+});
+
 app.post("/api/signup", (req, res) => {
   console.log("Request received");
 

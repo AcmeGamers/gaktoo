@@ -401,6 +401,13 @@ header ul > li {
   color: #000;
   border: 1px solid #000;
 }
+#usrform > textarea.invalid {
+  border: 1px solid red;
+}
+.star-choice {
+  border: 0;
+  padding: 0;
+}
 
 /* 
 ==================

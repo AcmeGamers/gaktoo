@@ -3,13 +3,15 @@ import Error404 from "../404";
 import CourseInfo from "./courseInfo.json";
 import ContentInfo from "./CourseContent/contentInfo.json";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import axios from "axios";
 
 export default function CourseDetail(props) {
   const id = window.location.pathname.split("/")[2],
     course = CourseInfo.find((course) => course.id == id),
     content = ContentInfo.find((content) => content.id == id),
-    comment = useRef();
+    comment = useRef(),
+    [reviews, setReviews] = useState(5);
 
   if (!course) {
     return (
@@ -27,6 +29,16 @@ export default function CourseDetail(props) {
   // - Checks if users is enrolled in the course
   // - If not, show the enroll button
   // - If yes, show the start button
+
+  // Functions
+  function getDataFromServer(data) {
+    axios
+      .post("/api/comment", data)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+
+    // console.log(data);
+  }
 
   function checkIfEnrolled() {}
 
@@ -82,10 +94,107 @@ export default function CourseDetail(props) {
             className="column hr-left"
             onSubmit={(e) => {
               e.preventDefault();
-              console.log(comment.current.value);
-              props.signMessage(comment.current.value);
+
+              // Checks if fields are not filled, give them class invalid if not
+              if (comment.current.value === "")
+                comment.current.classList.add("invalid");
+
+              // If single letter is typed, removes invalid class
+              comment.current.addEventListener("input", (e) => {
+                if (e.target.value.length > 1) {
+                  e.target.classList.remove("invalid");
+                }
+              });
+
+              if (comment.current.value != "") {
+                props.signMessage(comment.current.value);
+
+                getDataFromServer({
+                  id: props.accountInfo,
+                  F_Name: props.data.F_Name,
+                  username: props.data.username,
+                  course: id,
+                  created_at: new Date().toLocaleString(),
+                  comment: comment.current.value,
+                  review: reviews,
+                });
+              }
             }}
           >
+            {/* Stars */}
+            <div className="column course_detail__stars">
+              <div>
+                <input
+                  type="radio"
+                  name="star"
+                  id="star5"
+                  value="5"
+                  onClick={(e) => {
+                    setReviews(e.target.value);
+                  }}
+                />
+                <label className="star-choice" htmlFor="star5" title="text">
+                  5 stars
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="star"
+                  id="star4"
+                  value="4"
+                  onClick={(e) => {
+                    setReviews(e.target.value);
+                  }}
+                />
+                <label className="star-choice" htmlFor="star4" title="text">
+                  4 stars
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="star"
+                  id="star3"
+                  value="3"
+                  onClick={(e) => {
+                    setReviews(e.target.value);
+                  }}
+                />
+                <label className="star-choice" htmlFor="star3" title="text">
+                  3 stars
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="star"
+                  id="star2"
+                  value="2"
+                  onClick={(e) => {
+                    setReviews(e.target.value);
+                  }}
+                />
+                <label className="star-choice" htmlFor="star2" title="text">
+                  2 stars
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="star"
+                  id="star1"
+                  value="1"
+                  onClick={(e) => {
+                    setReviews(e.target.value);
+                  }}
+                />
+                <label className="star-choice" htmlFor="star1" title="text">
+                  1 star
+                </label>
+              </div>
+            </div>
+
             <textarea
               name="comment"
               form="usrform"
