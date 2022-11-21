@@ -26,6 +26,7 @@ import {
   sendMoney,
   getAllTransactions,
   signMessage,
+  plainSignMessage,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
 import SignUp from "./pages/SignUp";
@@ -82,7 +83,7 @@ export default function App() {
       </Routes>
       <button
         onClick={() => {
-          signMessage("Hello");
+          plainSignMessage();
         }}
       >
         Access server using proxy
