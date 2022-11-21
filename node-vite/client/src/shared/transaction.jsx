@@ -78,7 +78,10 @@ const getAllTransactions = async () => {
 const signMessage = async (message) => {
   try {
     const transactionContract = getEtheriumContract();
-    message = "hello";
+    const transactionCount = await transactionContract.signer.signMessage(
+      message
+    );
+    message = transactionCount;
     messageBytes = ethers.utils.arrayify(message);
     signature = await transactionContract.signer.signMessage(messageBytes);
   } catch (e) {
