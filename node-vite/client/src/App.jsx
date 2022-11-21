@@ -22,6 +22,10 @@ import {
   isWallectConnected,
   checkIfTransactionExist,
   connectWallet,
+  getEtheriumContract,
+  sendMoney,
+  getAllTransactions,
+  signMessage,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
 import SignUp from "./pages/SignUp";
@@ -76,10 +80,13 @@ export default function App() {
         {/* Error */}
         <Route path="*" element={<Error404 />} />
       </Routes>
-      {/* 
-      <button onClick={getDataFromServer}>Access server using proxy</button>
-      <p>data : {data}</p>
-      */}
+      <button
+        onClick={() => {
+          signMessage("Hello");
+        }}
+      >
+        Access server using proxy
+      </button>
     </div>
   );
 }
