@@ -58,4 +58,27 @@ contract Transactions {
     function getTransactionsCount() public view returns(uint256) {
         return transactionCounts;
     }
+
+    // sign a message
+    function signMessage(string memory message) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(message));
+    }
+
+    // recover signer address from a message by using his signature
+    function recoverSigner(bytes32 message, bytes memory sig) public pure returns (address) {
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(sig);
+        return ecrecover(message, v, r, s);
+    }
+     
+    // split the signature into r, s and v variables
+    function splitSignature(bytes memory sig) public pure returns (bytes32 r, bytes32 s, uint8 v) {
+        require(sig.length == 65, "invalid signature length");
+        assembly {
+            r := mload(add(sig, 32))
+            s := mload(add(sig, 64))
+            v := byte(0, mload(add(sig, 96)))
+        }
+        return (r, s, v);
+    }
+     
 }
