@@ -41,6 +41,15 @@ export default function CourseContent() {
     <Layout className="content_page row space-between">
       {/* Left Hand Side */}
       <div className="content_page__video">
+        <Link to={`/course/${courseID}/`}>
+          <span
+            style={{
+              color: "blue",
+            }}
+          >
+            Return To Course Section
+          </span>
+        </Link>
         <h1>{contentVideo.title}</h1>
         <iframe
           width="560"

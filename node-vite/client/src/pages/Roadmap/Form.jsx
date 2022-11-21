@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // const submittedValues = false;
@@ -13,9 +13,23 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 //  }
 
 export default function Form() {
+  const backend = useRef(),
+    frontend = useRef(),
+    fullstack = useRef();
+
   return (
     <div className="form-page wow fadeInUp">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          // check which ref is active and redirect to the correct page
+          if (frontend.current.checked)
+            window.location.href = "/result-frontend";
+          if (backend.current.checked) window.location.href = "/result-backend";
+          if (fullstack.current.checked)
+            window.location.href = "/result-fullstack";
+        }}
+      >
         <div className="form-container  wow fadeInUp animated delay-2s">
           <input className="name-input" type="text" placeholder="your name" />
 
@@ -33,11 +47,11 @@ export default function Form() {
         <div className="form-container wow fadeInUp animated delay-2s">
           <label>
             <h3>What is your goal?:</h3>
-            <input type="radio" name="goal" value="frontend" />
+            <input type="radio" name="goal" value="frontend" ref={frontend} />
             Frontend
-            <input type="radio" name="goal" value="backend" />
+            <input type="radio" name="goal" value="backend" ref={backend} />
             Backend
-            <input type="radio" name="goal" value="fullstack" />
+            <input type="radio" name="goal" value="fullstack" ref={fullstack} />
             Full-Stack Developer
             <p>Data Scientist</p>
             <p>UI/UX Designer</p>
@@ -73,9 +87,7 @@ export default function Form() {
             </select>
           </label>
 
-          <button type="submit" onClick="">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>

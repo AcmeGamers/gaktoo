@@ -98,8 +98,8 @@ export default function App() {
         {/* Roadmaps */}
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/result-fullstack" element={<ResultFullstack />} />
-        <Route path="/result-front" element={<ResultFront />} />
-        <Route path="/result-back" element={<ResultBack />} />
+        <Route path="/result-frontend" element={<ResultFront />} />
+        <Route path="/result-backend" element={<ResultBack />} />
 
         {/* Authentication */}
         <Route

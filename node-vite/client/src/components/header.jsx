@@ -22,7 +22,16 @@ const Header = (props) => {
             <Link to="/courses">Courses</Link>
           </li>
           <li>
-            <Link to="/result-front">Specific</Link>
+            <Link to="/result-frontend">Frontend</Link>
+          </li>
+          <li>
+            <Link to="/result-backend">Backend</Link>
+          </li>
+          <li>
+            <Link to="/result-fullstack">Fullstack</Link>
+          </li>
+          <li>
+            <Link to="/roadmap">Roadmap</Link>
           </li>
         </ul>
       </div>
